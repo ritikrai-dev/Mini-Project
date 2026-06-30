@@ -1,0 +1,36 @@
+
+###
+GET http://localhost:5000/api/reports/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhM2UxOGU4NGVkYWM0MGY3N2U4NzUwOCIsImlhdCI6MTc4MjgyOTI4OCwiZXhwIjoxNzgzNDM0MDg4fQ.brqP0flYNyxon4B6n9ptsywXClJaGOAiJCoPuJCNiHM
+
+### Export CSV Report
+GET http://localhost:5000/api/reports/csv
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhM2UxOGU4NGVkYWM0MGY3N2U4NzUwOCIsImlhdCI6MTc4MjgzMDczMCwiZXhwIjoxNzgzNDM1NTMwfQ.AMZuuRHt0meqNEPGoV1Z5IB6AP7s431zqbwRCgLWebE
+
+### Export Excel Report
+GET http://localhost:5000/api/reports/excel
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhM2UxOGU4NGVkYWM0MGY3N2U4NzUwOCIsImlhdCI6MTc4MjgzMTY2NiwiZXhwIjoxNzgzNDM2NDY2fQ.yqgtDzr_Ix_F7Tyaql-P2zb0IrebOedivv5yBmE2ogI
+
+###
+GET http://localhost:5000/api/ai/insights
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhM2UxOGU4NGVkYWM0MGY3N2U4NzUwOCIsImlhdCI6MTc4MjgzMzE5OSwiZXhwIjoxNzgzNDM3OTk5fQ.2V-s-3d8TteJtUDFR2BEa-QutP5zjfbbFhg9t0NoNtg
+
+##### Login 
+
+POST http://localhost:5000/api/auth/login
+Content-Type: application/json
+
+{
+    "email":"cs.ritik@gmail.com",
+    "password":"Ritik"
+}
+
+
+###
+GET http://localhost:5000/api/ai/insights
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhM2UxOGU4NGVkYWM0MGY3N2U4NzUwOCIsImlhdCI6MTc4MjgzNzEwMywiZXhwIjoxNzgzNDQxOTAzfQ.ayVIstkzOafpT9A7X1B8D8ffVlAdD7pz-xEehiuMhrY
+
+
+###
+GET http://localhost:5000/api/ai/insights
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhM2UxOGU4NGVkYWM0MGY3N2U4NzUwOCIsImlhdCI6MTc4MjgzODQyNiwiZXhwIjoxNzgzNDQzMjI2fQ.jBV6hhyDvrAr0rGS7n0Nl04Ncwa86mDW46BPE-DFcvg
