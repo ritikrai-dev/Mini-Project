@@ -26,7 +26,7 @@ export const exportJSON = async (req, res) => {
 
     res.setHeader("Content-Type", "application/json");
 
-    return res.status(200).json(transactions);
+    return res.status(200).json(report);
 
   } catch (error) {
 

@@ -44,22 +44,61 @@ export const addTransaction = async (req, res) => {
 
 // Getting all the transaction of the user
 export const getTransactions = async (req, res) => {
-  try {
-    const transactions = await Transaction.find({
-      user: req.user._id,
-    }).sort({ createdAt: -1 });
 
-    return res.status(200).json({
-      success: true,
-      count: transactions.length,
-      transactions,
-    });
-  } catch (error) {
-    return res.status(500).json({
-      success: false,
-      message: error.message,
-    });
-  }
+    try {
+
+        const page = Number(req.query.page) || 1;
+
+        const limit = Number(req.query.limit) || 10;
+
+        const skip = (page - 1) * limit;
+
+        const totalTransactions = await Transaction.countDocuments({
+
+            user: req.user._id
+
+        });
+
+        const transactions = await Transaction.find({
+
+            user: req.user._id
+
+        })
+
+        .sort({ date: -1 })
+
+        .skip(skip)
+
+        .limit(limit);
+
+        res.status(200).json({
+
+            success: true,
+
+            transactions,
+
+            currentPage: page,
+
+            totalPages: Math.ceil(totalTransactions / limit),
+
+            totalTransactions
+
+        });
+
+    }
+
+    catch (error) {
+
+        res.status(500).json({
+
+            success: false,
+
+            message: error.message
+
+        });
+
+    }
+
 };
 
  

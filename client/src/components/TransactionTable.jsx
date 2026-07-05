@@ -1,7 +1,7 @@
 import "../style/transactionTable.css";
 
 export default function TransactionTable({ transactions,
-    onDelete}) {
+    onDelete , onEdit}) {
   return (
     <div className="table-container">
 
@@ -75,8 +75,11 @@ transaction.type === "income"
 
               <td>
 
-            <button className="action-btn">
-                <i className="ti ti-edit"></i>
+            <button
+            className="edit-btn"
+            onClick={() => onEdit(transaction)}
+            > 
+            <i className="ti ti-edit"></i>
             </button>
 
             <button

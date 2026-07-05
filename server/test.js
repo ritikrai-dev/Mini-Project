@@ -1,19 +1,17 @@
+import mongoose from "mongoose";
 import dotenv from "dotenv";
-import { GoogleGenAI } from "@google/genai";
 
 dotenv.config();
 
-const ai = new GoogleGenAI({
-  apiKey: process.env.GEMINI_API_KEY,
-});
+try {
+  console.log("URI:", process.env.MONGODB);
 
-async function test() {
-  const response = await ai.models.generateContent({
-    model: "gemini-2.5-flash",
-    contents: "Say Hello",
-  });
+  const conn = await mongoose.connect(process.env.MONGODB);
 
-  console.log(response.text);
+  console.log("Connected!");
+  console.log(conn.connection.host);
+} catch (err) {
+  console.error(err);
 }
 
-test().catch(console.error);
+process.exit();

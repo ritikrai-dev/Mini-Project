@@ -1,6 +1,9 @@
 import express from "express";
 import dotenv from "dotenv";
 import cors from "cors";
+import dns from "node:dns";
+
+dns.setServers(["8.8.8.8", "1.1.1.1"]);
 
 import connectDB from "./config/db.js";
 
@@ -14,11 +17,8 @@ import User from "./models/User.js";
 dotenv.config();
 
 console.log("Gemini Key:", process.env.GEMINI_API_KEY);
-
+console.log(process.env.MONGODB);
 await connectDB();
-const users = await User.find();
-
-console.log(users);
 
 const app = express();
 

@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useState , useEffect } from "react";
 import "./../style/transactionForm.css";
 
-export default function TransactionForm({onSubmit}) {
+export default function TransactionForm({transaction,onSubmit}) {
     const [loading, setLoading] = useState(false);
+    
 
     const [form, setForm] = useState({
 
@@ -19,6 +20,50 @@ export default function TransactionForm({onSubmit}) {
         date: new Date().toISOString().split("T")[0],
 
     });
+
+    useEffect(() => {
+
+    if (transaction) {
+
+        setForm({
+
+            type: transaction.type,
+
+            amount: transaction.amount,
+
+            category: transaction.category,
+
+            paymentMethod: transaction.paymentMethod,
+
+            description: transaction.description,
+
+            date: transaction.date.split("T")[0],
+
+        });
+
+    }
+
+    else {
+
+        setForm({
+
+            type: "expense",
+
+            amount: "",
+
+            category: "",
+
+            paymentMethod: "",
+
+            description: "",
+
+            date: new Date().toISOString().split("T")[0],
+
+        });
+
+    }
+
+}, [transaction]);
 
     const handleChange = (e) => {
 
