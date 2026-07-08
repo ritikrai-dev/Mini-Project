@@ -75,7 +75,23 @@ export const generateInsights = async (userId) => {
     console.log("========== STEP 8 ==========");
     console.log(cleaned);
 
-    return JSON.parse(cleaned);
+    let insights;
+
+try {
+
+    insights = JSON.parse(cleaned);
+
+} catch {
+
+    insights = {
+        summary: "Unable to parse AI response.",
+        insights: [],
+        recommendations: []
+    };
+
+}
+
+    return insights;
 
   } catch (error) {
     console.error("========== AI SERVICE ERROR ==========");
