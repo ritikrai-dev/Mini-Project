@@ -8,7 +8,7 @@ export default function Reports() {
 
         const response = await fetch(
 
-            `http://localhost:5000/api/reports/${type}`,
+            `${import.meta.env.VITE_API_URL}/reports/${type}`,
 
             {
 

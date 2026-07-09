@@ -19,7 +19,7 @@ export default function AIInsights() {
 
             const response = await fetch(
 
-                "http://localhost:5000/api/ai/insights",
+                `${import.meta.env.VITE_API_URL}/ai/insights`,
 
                 {
 

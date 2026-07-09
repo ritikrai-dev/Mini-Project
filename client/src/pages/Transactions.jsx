@@ -21,7 +21,7 @@ export default function Transactions() {
     async function fetchTransactions() {
       try {
         const response = await fetch(
-          `http://localhost:5000/api/transactions?page=${page}&limit=10`,
+          `${import.meta.env.VITE_API_URL}/transactions?page=${page}&limit=10`,
           {
             headers: {
               Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -56,7 +56,7 @@ export default function Transactions() {
     try {
 
       const response = await fetch(
-        `http://localhost:5000/api/transactions/${id}`,
+        `${import.meta.env.VITE_API_URL}/transactions/${id}`,
         {
           method: "DELETE",
           headers: {
@@ -95,7 +95,7 @@ export default function Transactions() {
     try {
 
         const response = await fetch(
-            "http://localhost:5000/api/transactions",
+            `${import.meta.env.VITE_API_URL}/transactions`,
             {
                 method: "POST",
 
@@ -150,7 +150,7 @@ const handleUpdateTransaction = async (formData) => {
 
         const response = await fetch(
 
-            `http://localhost:5000/api/transactions/${selectedTransaction._id}`,
+            `${import.meta.env.VITE_API_URL}/transactions/${selectedTransaction._id}`,
 
             {
 

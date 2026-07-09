@@ -8,7 +8,7 @@ import Transactions from "./pages/Transactions.jsx";
 import Analytics from "./pages/Analytics.jsx";
 import Ai from "./pages/AIInsights.jsx";
 import Reports from "./pages/Reports.jsx";
-import Settings from "./pages/Setting.jsx";
+import Settings from "./pages/Settings.jsx";
 
 export default function App() {
   return (

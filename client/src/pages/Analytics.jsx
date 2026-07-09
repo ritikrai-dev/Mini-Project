@@ -20,7 +20,7 @@ export default function Analytics() {
 
         const response = await fetch(
 
-            "http://localhost:5000/api/analytics/category",
+            `${import.meta.env.VITE_API_URL}/analytics/category`,
 
             {
 

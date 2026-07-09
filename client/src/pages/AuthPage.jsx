@@ -15,7 +15,7 @@ e.preventDefault();
 try{
 setLoading(true);
 const response = await fetch(
-"http://localhost:5000/api/auth/login",
+`${import.meta.env.VITE_API_URL}/auth/login`,
 {
 method:"POST",
 headers:{
@@ -115,7 +115,7 @@ function RegisterPanel({ onSwitch}) {
     try {
       setLoading(true);
       const response = await fetch(
-        "http://localhost:5000/api/auth/register",
+        `${import.meta.env.VITE_API_URL}/auth/register`,
         {
           method: "POST",
           headers: {

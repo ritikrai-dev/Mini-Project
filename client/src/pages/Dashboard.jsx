@@ -14,7 +14,7 @@ export default function Dashboard() {
             try {
 
                 const response = await fetch(
-                    "http://localhost:5000/api/dashboard",
+                    `${import.meta.env.VITE_API_URL}/dashboard`,
                     {
                         headers: {
                             Authorization:
