@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 import "../style/navbar.css";
 
-export default function Navbar() {
+export default function Navbar({ setSidebarOpen }) {
 
   const [user, setUser] = useState(null);
+  const location = useLocation();
 
   useEffect(() => {
 
@@ -35,12 +37,55 @@ export default function Navbar() {
     fetchUser();
 
   }, []);
+const pageDetails = {
+  "/dashboard": {
+    title: "Dashboard",
+    icon: "ti-home",
+  },
+  "/transactions": {
+    title: "Transactions",
+    icon: "ti-receipt",
+  },
+  "/analytics": {
+    title: "Analytics",
+    icon: "ti-chart-bar",
+  },
+  "/ai": {
+    title: "AI Insights",
+    icon: "ti-sparkles",
+  },
+  "/reports": {
+    title: "Reports",
+    icon: "ti-file-text",
+  },
+  "/settings": {
+    title: "Settings",
+    icon: "ti-settings",
+  },
+};
+
+const currentPage =
+  pageDetails[location.pathname] || {
+    title: "ExpenseX",
+    icon: "ti-layout-dashboard",
+  };
+
 
   return (
     <header className="navbar">
 
-      <div>
-        <h2>Dashboard</h2>
+      <div className="navbar-left">
+
+  <button
+    className="menu-toggle"
+    onClick={() => setSidebarOpen(true)}
+  >
+    <i className="ti ti-menu-2"></i>
+  </button>
+        <h2>
+    <i className={`ti ${currentPage.icon}`}></i>
+    {currentPage.title}
+  </h2>
       </div>
 
       <div className="navbar-right">

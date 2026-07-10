@@ -5,6 +5,8 @@ import TransactionForm from "../components/TransactionForm.jsx";
 import SearchBar from "../components/SearchBar.jsx";
 import TransactionFilter from "../components/TransactionFilter.jsx";
 import Pagination from "../components/Pagination";
+import { toast } from "react-toastify";
+
 
 
 export default function Transactions() {
@@ -77,14 +79,14 @@ export default function Transactions() {
 
       } else {
 
-        alert(data.message);
+        toast.error(data.message);
 
       }
 
     } catch (error) {
 
       console.log(error);
-      alert("Failed to delete transaction.");
+      toast.error("Failed to delete transaction.");
 
     }
 
@@ -124,7 +126,7 @@ export default function Transactions() {
 
         } else {
 
-            alert(data.message);
+            toast.error(data.message);
 
         }
 
@@ -197,7 +199,7 @@ const handleUpdateTransaction = async (formData) => {
 
         else {
 
-            alert(data.message);
+            toast.error(data.message);
 
         }
 

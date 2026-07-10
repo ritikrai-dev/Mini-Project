@@ -1,6 +1,7 @@
 import { NavLink, useNavigate } from "react-router-dom";
 import "../style/sidebar.css";
-export default function Sidebar() {
+export default function Sidebar({sidebarOpen,
+  setSidebarOpen}) {
   const navigate = useNavigate();
 
 const handleLogout = () => {
@@ -16,7 +17,9 @@ const handleLogout = () => {
 
 
   return (
-    <aside className="sidebar">
+    <aside
+  className={`sidebar ${sidebarOpen ? "open" : ""}`}
+>
 
       <div className="sidebar-logo">
         <img
@@ -29,32 +32,32 @@ const handleLogout = () => {
 
       <nav className="sidebar-menu">
 
-        <NavLink to="/dashboard" className="menu-item">
+        <NavLink to="/dashboard" className="menu-item" onClick={() => setSidebarOpen(false)}>
           <i className="ti ti-home"></i>
           <span>Dashboard</span>
         </NavLink>
 
-        <NavLink to="/transactions" className="menu-item">
+        <NavLink to="/transactions" className="menu-item" onClick={() => setSidebarOpen(false)}>
           <i className="ti ti-receipt"></i>
           <span>Transactions</span>
         </NavLink>
 
-        <NavLink to="/analytics" className="menu-item">
+        <NavLink to="/analytics" className="menu-item" onClick={() => setSidebarOpen(false)}>
           <i className="ti ti-chart-bar"></i>
           <span>Analytics</span>
         </NavLink>
 
-        <NavLink to="/ai" className="menu-item">
+        <NavLink to="/ai" className="menu-item" onClick={() => setSidebarOpen(false)}>
           <i className="ti ti-sparkles"></i>
           <span>AI Insights</span>
         </NavLink>
 
-        <NavLink to="/reports" className="menu-item">
+        <NavLink to="/reports" className="menu-item" onClick={() => setSidebarOpen(false)}>
           <i className="ti ti-file-text"></i>
           <span>Reports</span>
         </NavLink>
 
-        <NavLink to="/settings" className="menu-item">
+        <NavLink to="/settings" className="menu-item" onClick={() => setSidebarOpen(false)}>
           <i className="ti ti-settings"></i>
           <span>Settings</span>
         </NavLink>

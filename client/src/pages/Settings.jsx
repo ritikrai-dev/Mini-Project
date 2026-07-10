@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import "../style/setting.css";
+import { toast } from "react-toastify";
 export default function Settings() {
 
     const [user, setUser] = useState({
@@ -80,7 +81,7 @@ export default function Settings() {
 
         const data = await response.json();
 
-        alert(data.message);
+        toast.error(data.message);
 
     }
 
@@ -112,7 +113,7 @@ export default function Settings() {
 
     const data = await response.json();
 
-    alert(data.message);
+    toast.error(data.message);
 
     if(data.success){
 

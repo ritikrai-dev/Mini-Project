@@ -62,3 +62,43 @@
 
     border-radius:50%;
 }
+
+.navbar-left{
+    display:flex;
+    align-items:center;
+    gap:16px;
+}
+
+.menu-toggle{
+    display:none;
+    width:42px;
+    height:42px;
+    border:none;
+    border-radius:10px;
+    background:#f3f4f6;
+    cursor:pointer;
+    align-items:center;
+    justify-content:center;
+}
+
+.menu-toggle i{
+    font-size:24px;
+}
+
+
+/* mobile */
+@media (max-width:768px){
+
+.menu-toggle{
+    display:flex;
+}
+
+.profile span{
+    display:none;
+}
+
+.dashboard-main{
+    margin-left:0 !important;
+}
+
+}

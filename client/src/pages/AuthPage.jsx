@@ -2,6 +2,7 @@ import { useState } from "react";
 import PasswordInput from "../assets/PasswordInput.jsx";
 import { useNavigate } from "react-router-dom";
 import logo from "/logo1.png";
+import { toast } from "react-toastify";
 
 // LOGIN COMPONENT
 
@@ -29,14 +30,18 @@ password
 const data = await response.json();
 if (data.token) {
   localStorage.setItem("token", data.token);
-  navigate("/dashboard", { replace: true });
+  toast.success("Welcome back! 🎉");
+
+  setTimeout(() => {
+    navigate("/dashboard", { replace: true });
+  }, 800);
 } else {
-  alert(data.message);
+  toast.error(data.message);
 }
 }
 catch(error){
 console.log(error);
-alert("Server error");
+toast.error("Server error");
 }
 finally{
 setLoading(false);
@@ -130,14 +135,18 @@ function RegisterPanel({ onSwitch}) {
       );
       const data = await response.json();
      if (data.token) {
-        localStorage.setItem("token", data.token);
-        navigate("/dashboard", { replace: true });
-    } else {
-  alert(data.message);
+  localStorage.setItem("token", data.token);
+  toast.success("Account created successfully! 🎉");
+
+  setTimeout(() => {
+    navigate("/dashboard", { replace: true });
+  }, 800);
+} else {
+  toast.error(data.message);
 }
     } catch (error) {
       console.log(error);
-      alert("Server error");
+      toast.error("Server error");
     } finally {
       setLoading(false);
     }
