@@ -18,6 +18,15 @@ CartesianGrid
 
 export default function MonthlyExpenseChart({data}){
 
+    if (!data || data.length === 0) {
+        return (
+            <div className="chart-card">
+                <h2>Monthly Expense</h2>
+                <p>No monthly expense data available yet.</p>
+            </div>
+        );
+    }
+
 return(
 
 <div className="chart-card">
@@ -36,22 +45,28 @@ height={350}
 
 <CartesianGrid strokeDasharray="3 3"/>
 
-<XAxis dataKey="month"/>
+<XAxis
+    dataKey="month"
+    tick={{ fontSize: 12 }}
+/>
 
-<YAxis/>
+<YAxis
+    tick={{ fontSize: 12 }}
+/>
 
-<Tooltip/>
+<Tooltip
+    contentStyle={{
+        borderRadius:"10px"
+    }}
+/>
 
 <Line
-
-type="monotone"
-
-dataKey="amount"
-
-stroke="#4F46E5"
-
-strokeWidth={3}
-
+    type="monotone"
+    dataKey="amount"
+    stroke="#4F46E5"
+    strokeWidth={3}
+    dot={{ r:4 }}
+    activeDot={{ r:7 }}
 />
 
 </LineChart>

@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import ExpenseCategoryChart from "../components/ExpenseCategoryChart.jsx";
 import MonthlyExpenseChart from "../components/MonthlyExpenseChart.jsx";
+import "../style/analytics.css";
+
 
 export default function Analytics() {
 

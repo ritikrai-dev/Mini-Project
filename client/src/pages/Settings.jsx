@@ -131,14 +131,27 @@ export default function Settings() {
 
 }
     return (
-<>
+
+<div className="settings-page">
+
         <form
             className="settings-form"
             onSubmit={handleSubmit}
         >
 
-            <h2>Profile Settings</h2>
+        <div className="profile-preview">
 
+<img
+src={`https://ui-avatars.com/api/?name=${encodeURIComponent(user.name)}`}
+alt="profile"
+/>
+
+<h2>Profile Settings</h2>
+
+</div>
+<div className="form-group">
+
+    <label>Full Name</label>
             <input
 
                 type="text"
@@ -158,6 +171,10 @@ export default function Settings() {
                 }
 
             />
+</div>
+<div className="form-group">
+
+    <label>Email Address</label>
 
             <input
 
@@ -179,6 +196,8 @@ export default function Settings() {
 
             />
 
+            </div>
+
             <button
                 className="primary-btn"
             >
@@ -188,7 +207,7 @@ export default function Settings() {
             </button>
 
         </form>
-<br></br>
+
         <form
 
 className="settings-form"
@@ -198,7 +217,9 @@ onSubmit={handlePasswordUpdate}
 >
 
 <h2>🔒 Change Password</h2>
+<div className="form-group">
 
+    <label>Current Password</label>
 <input
 
 type="password"
@@ -220,7 +241,11 @@ currentPassword:e.target.value
 }
 
 />
+</div>
 
+<div className="form-group">
+
+    <label>New Password</label>
 <input
 
 type="password"
@@ -233,15 +258,20 @@ onChange={(e)=>
 
 setPasswords({
 
-...passwords,
-
-newPassword:e.target.value
-
+    ...passwords,
+    
+    newPassword:e.target.value
+    
 })
 
 }
 
 />
+</div>
+
+<div className="form-group">
+
+    <label>Confirm New Password</label>
 
 <input
 
@@ -264,6 +294,7 @@ confirmPassword:e.target.value
 }
 
 />
+</div>
 
 <button className="primary-btn">
 
@@ -272,7 +303,8 @@ Update Password
 </button>
 
 </form>
-</>
+</div>
+
     );
 
 }

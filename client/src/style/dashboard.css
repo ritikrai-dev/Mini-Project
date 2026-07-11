@@ -18,3 +18,44 @@
 
     padding:30px;
 }
+
+/* ============================= */
+/* Tablet */
+/* ============================= */
+
+@media (max-width:992px){
+
+.dashboard-main{
+    margin-left:0;
+    width:100%;
+}
+
+.dashboard-content{
+    padding:20px;
+}
+
+}
+
+/* ============================= */
+/* Mobile */
+/* ============================= */
+
+@media (max-width:768px){
+
+.dashboard-content{
+    padding:16px;
+}
+
+}
+
+/* ============================= */
+/* Small Mobile */
+/* ============================= */
+
+@media (max-width:480px){
+
+.dashboard-content{
+    padding:12px;
+}
+
+}

@@ -18,7 +18,17 @@ padding:25px;
 
 border-radius:18px;
 
-box-shadow:0 5px 15px rgba(0,0,0,.08);
+box-shadow:0 8px 20px rgba(0,0,0,.06);
+
+transition:.3s;
+
+}
+
+.report-card:hover{
+
+transform:translateY(-5px);
+
+box-shadow:0 14px 30px rgba(0,0,0,.12);
 
 }
 
@@ -35,5 +45,43 @@ color:#6b7280;
 .report-card h2{
 
 font-size:32px;
+
+color:#111827;
+
+}
+
+/* Tablet */
+
+@media(max-width:768px){
+
+.report-card{
+
+padding:20px;
+
+}
+
+}
+
+/* Mobile */
+
+@media(max-width:576px){
+
+.report-card{
+
+padding:18px;
+
+}
+
+.report-card h2{
+
+font-size:24px;
+
+}
+
+.report-card h3{
+
+font-size:15px;
+
+}
 
 }

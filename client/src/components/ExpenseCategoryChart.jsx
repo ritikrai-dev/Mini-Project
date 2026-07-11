@@ -18,6 +18,21 @@ const COLORS = [
 
 export default function ExpenseCategoryChart({ data }) {
 
+
+    if(data.length===0){
+    return(
+
+<div className="chart-card">
+
+<h2>Expense Categories</h2>
+
+<p>No expense data available yet.</p>
+
+</div>
+
+    );
+}
+
     return (
 
         <div className="chart-card">
@@ -39,7 +54,7 @@ export default function ExpenseCategoryChart({ data }) {
 
                         nameKey="name"
 
-                        outerRadius={120}
+                       outerRadius="75%"
 
                     >
 
@@ -63,7 +78,10 @@ export default function ExpenseCategoryChart({ data }) {
 
                     <Tooltip/>
 
-                    <Legend/>
+                    <Legend
+    verticalAlign="bottom"
+    height={40}
+/>
 
                 </PieChart>
 

@@ -53,11 +53,31 @@ export default function AIInsights() {
 
     };
 
-    if(loading){
+    if (loading) {
+  return (
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        minHeight: "60vh",
+        fontSize: "22px",
+        fontWeight: "600",
+      }}
+    >
+      🤖 Generating AI Insights...
+    </div>
+  );
+}
 
-        return <h2>Generating AI Insights...</h2>;
-
-    }
+if (!insights) {
+    return (
+        <div className="chart-card">
+            <h2>No AI insights available.</h2>
+            <p>Try refreshing after adding some transactions.</p>
+        </div>
+    );
+}
 
     return(
 

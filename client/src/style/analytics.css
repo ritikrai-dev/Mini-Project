@@ -1,0 +1,47 @@
+.analytics-page{
+    display:flex;
+    flex-direction:column;
+    gap:30px;
+}
+
+.chart-card{
+    background:#fff;
+    padding:24px;
+    border-radius:18px;
+    box-shadow:0 8px 25px rgba(0,0,0,.06);
+}
+
+.chart-card h2{
+    margin-bottom:20px;
+    color:#111827;
+    font-size:22px;
+    font-weight:600;
+}
+
+@media (max-width:768px){
+
+.chart-card{
+    padding:18px;
+}
+
+.chart-card h2{
+    font-size:20px;
+}
+
+}
+
+@media (max-width:576px){
+
+.analytics-page{
+    gap:20px;
+}
+
+.chart-card{
+    padding:15px;
+}
+
+.chart-card h2{
+    font-size:18px;
+}
+
+}

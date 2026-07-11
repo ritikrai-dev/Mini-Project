@@ -1,15 +1,10 @@
 .recent-transactions{
-
     background:white;
-
     padding:25px;
-
     border-radius:18px;
-
     margin-top:25px;
-
     box-shadow:0 10px 25px rgba(0,0,0,.05);
-
+    overflow:hidden;
 }
 
 .section-header{
@@ -37,19 +32,13 @@
     padding:8px 18px;
     border-radius:8px;
 }
-
 .transaction-card{
-
     display:flex;
-
     justify-content:space-between;
-
     align-items:center;
-
+    gap:20px;
     padding:18px 0;
-
     border-bottom:1px solid #ececec;
-
 }
 
 .transaction-card:last-child{
@@ -137,5 +126,93 @@
 .transaction-right small{
 
     color:gray;
+
+}
+
+.transaction-left{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    flex:1;
+    min-width:0;
+}
+
+.transaction-left h4{
+    margin-bottom:4px;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+}
+
+.transaction-left span{
+    color:gray;
+    font-size:14px;
+    word-break:break-word;
+}
+
+
+/* ========================= */
+/* Tablet */
+/* ========================= */
+
+@media (max-width:768px){
+
+.recent-transactions{
+    padding:20px;
+}
+
+.section-header{
+    gap:12px;
+}
+
+.section-header h2{
+    font-size:20px;
+}
+
+.transaction-card{
+    gap:15px;
+}
+
+.transaction-icon{
+    width:42px;
+    height:42px;
+}
+
+}
+
+/* ========================= */
+/* Mobile */
+/* ========================= */
+
+@media (max-width:576px){
+
+.section-header{
+    flex-direction:column;
+    align-items:flex-start;
+}
+
+.view-all-btn{
+    width:100%;
+    text-align:center;
+}
+
+.transaction-card{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:12px;
+}
+
+.transaction-left{
+    width:100%;
+}
+
+.transaction-right{
+    width:100%;
+    text-align:left;
+}
+
+.transaction-right h3{
+    font-size:20px;
+}
 
 }
