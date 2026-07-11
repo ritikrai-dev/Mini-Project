@@ -1,4 +1,5 @@
 import ReportSummary from "../components/ReportSummary.jsx";
+import "../style/report.css";
 import { useEffect, useState } from "react";
 
 export default function Reports() {
@@ -121,6 +122,17 @@ useEffect(() => {
             <br>
             </br>
 
+<div className="export-section">
+
+
+            <h2 className="export-title">
+    Export Financial Reports
+</h2>
+
+<p className="export-subtitle">
+    Download your expense history in multiple formats.
+</p>
+
             <div className="report-actions">
 
     <button
@@ -153,6 +165,7 @@ useEffect(() => {
 
 </div>
 
+</div>
         </>
 
     );
