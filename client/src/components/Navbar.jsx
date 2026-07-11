@@ -2,7 +2,8 @@ import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import "../style/navbar.css";
 
-export default function Navbar({ setSidebarOpen }) {
+export default function Navbar({ sidebarOpen,
+  setSidebarOpen, }) {
 
   const [user, setUser] = useState(null);
   const location = useLocation();
@@ -78,7 +79,7 @@ const currentPage =
 
   <button
     className="menu-toggle"
-    onClick={() => setSidebarOpen(true)}
+    onClick={() => setSidebarOpen(prev => !prev)}
   >
     <i className="ti ti-menu-2"></i>
   </button>

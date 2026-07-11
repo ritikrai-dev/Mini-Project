@@ -9,6 +9,12 @@ export default function DashboardLayout() {
 
   return (
     <div className="dashboard">
+      {sidebarOpen && (
+    <div
+      className="sidebar-overlay"
+      onClick={() => setSidebarOpen(false)}
+    />
+  )}
 
       <Sidebar
         sidebarOpen={sidebarOpen}
@@ -25,8 +31,10 @@ export default function DashboardLayout() {
       <div className="dashboard-main">
 
         <Navbar
-          setSidebarOpen={setSidebarOpen}
-        />
+    sidebarOpen={sidebarOpen}
+    setSidebarOpen={setSidebarOpen}
+/>
+
 
         <div className="dashboard-content">
           <Outlet />
