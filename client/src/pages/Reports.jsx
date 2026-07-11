@@ -118,6 +118,9 @@ useEffect(() => {
             </h1>
             <ReportSummary summary={summary} />
 
+            <br>
+            </br>
+
             <div className="report-actions">
 
     <button
