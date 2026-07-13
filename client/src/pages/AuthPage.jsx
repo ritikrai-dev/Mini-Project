@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useState , useEffect} from "react";
 import PasswordInput from "../assets/PasswordInput.jsx";
-import { useNavigate } from "react-router-dom";
+import { useNavigate , useSearchParams} from "react-router-dom";
 import logo from "/logo1.png";
 import { toast } from "react-toastify";
 
@@ -216,7 +216,21 @@ function RegisterPanel({ onSwitch}) {
 }
 // MAIN AUTH COMPONENT
 export default function AuthPage(){
-const [tab,setTab]=useState("login");
+      const [searchParams] = useSearchParams();
+
+    const [tab, setTab] = useState("login");
+
+    useEffect(() => {
+
+        const mode = searchParams.get("mode");
+
+        if (mode === "register") {
+            setTab("register");
+        } else {
+            setTab("login");
+        }
+
+    }, [searchParams]);
 return(
 <div className="auth-page">
 <div className="auth-card">
