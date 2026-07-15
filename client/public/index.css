@@ -1,3 +1,15 @@
+html,
+body,
+#root{
+  width:100%;
+  min-height:100%;
+  margin:0;
+  padding:0;
+}
+
+body{
+  overflow-x:hidden;
+}
 /* ===============================
    GLOBAL RESET
 ================================ */
@@ -246,3 +258,14 @@
   font-size: 14px;
 }
 
+
+
+.Toastify{
+    position: fixed !important;
+    inset: 0;
+    pointer-events: none;
+}
+
+.Toastify__toast-container{
+    pointer-events: auto;
+}
